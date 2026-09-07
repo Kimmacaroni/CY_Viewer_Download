@@ -6,7 +6,10 @@ PDF를 읽고, 검색하고, 표시·수정한 뒤 저장하거나 인쇄할 수
 
 ### [CY뷰어 최신 버전 다운로드](https://github.com/Kimmacaroni/CY_Viewer_Download/releases/latest)
 
-Release 페이지에서 `CYViewer-Setup-v1.0.0.exe`를 내려받아 실행하세요.
+Release 페이지에서 사용하는 운영체제에 맞는 파일을 내려받으세요.
+
+- Windows: `CYViewer-Setup-v1.0.0.exe`
+- macOS: `CYViewer-macOS-v1.0.0.dmg`
 
 ## 주요 기능
 
@@ -25,11 +28,20 @@ Release 페이지에서 `CYViewer-Setup-v1.0.0.exe`를 내려받아 실행하세
 
 ## 설치 방법
 
+### Windows
+
 1. [최신 Release](https://github.com/Kimmacaroni/CY_Viewer_Download/releases/latest)를 엽니다.
 2. `CYViewer-Setup-v1.0.0.exe`를 다운로드하고 실행합니다.
 3. 원하는 설치 경로를 선택합니다.
 4. `바탕화면에 바로가기 만들기` 여부를 선택합니다.
 5. 설치를 완료하고 CY뷰어를 실행합니다.
+
+### macOS
+
+1. [최신 Release](https://github.com/Kimmacaroni/CY_Viewer_Download/releases/latest)를 엽니다.
+2. `CYViewer-macOS-v1.0.0.dmg`를 다운로드하고 엽니다.
+3. `CYViewer.app`을 `Applications` 폴더로 옮깁니다.
+4. 응용 프로그램 폴더에서 CY뷰어를 실행합니다.
 
 ## 사용 방법
 
@@ -40,8 +52,11 @@ Release 페이지에서 `CYViewer-Setup-v1.0.0.exe`를 내려받아 실행하세
 
 ## 지원 환경
 
-- Windows 10·11
-- 64비트 PC
+- Windows 10·11 64비트 PC
+- macOS 12 Monterey 이상
+- Apple Silicon 및 Intel Mac
+
+macOS용은 Apple 개발자 서명·공증 전의 초기 배포본이므로 최초 실행 시 macOS 보안 안내가 나타날 수 있습니다.
 
 ## 개인정보
 
