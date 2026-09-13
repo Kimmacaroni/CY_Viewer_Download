@@ -1,31 +1,12 @@
-'use strict';
-
-self.addEventListener('install', () => {
-  self.skipWaiting();
-});
-
+// 이전 웹앱을 캐시한 사용자도 본 프로젝트의 새 주소로 이동한다.
+self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    (async () => {
-      try {
-        await self.registration.unregister();
-      } catch (e) {
-        console.warn('Failed to unregister the service worker:', e);
-      }
-
-      try {
-        const clients = await self.clients.matchAll({
-          type: 'window',
-        });
-        // Reload clients to ensure they are not using the old service worker.
-        clients.forEach((client) => {
-          if (client.url && 'navigate' in client) {
-            client.navigate(client.url);
-          }
-        });
-      } catch (e) {
-        console.warn('Failed to navigate some service worker clients:', e);
-      }
-    })()
-  );
+  const previousScope = self.registration.scope;
+  event.waitUntil((async () => {
+    await self.registration.unregister();
+    const windows = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    await Promise.all(windows
+      .filter((client) => client.url.startsWith(previousScope))
+      .map((client) => client.navigate('https://kimmacaroni.github.io/CY_Viewer/')));
+  })());
 });
